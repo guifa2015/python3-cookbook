@@ -30,7 +30,8 @@
     import html
 
     def make_element(name, value, **attrs):
-        keyvals = [' %s="%s"' % item for item in attrs.items()]
+        # keyvals = [' %s="%s"' % item for item in attrs.items()]
+        keyvals = [' {0}="{1}"'.format(*item) for item in attrs.items()]
         attr_str = ''.join(keyvals)
         element = '<{name}{attrs}>{value}</{name}>'.format(
                     name=name,
